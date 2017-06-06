@@ -1,0 +1,8 @@
+main: fr.golderpotato.waitingqueue.BukkitPlugin
+name: WaitingQueue
+version: 0.1
+author: GolderPotato
+description: WaitingQueue plugin
+commands:
+  menu:
+    description: open menu
