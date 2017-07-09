@@ -1,2 +1,6 @@
 server.type: hub
 server.name: hub1
+rabbit.host: localhost
+rabbit.port: 5672
+rabbit.user: eliaz
+rabbit.password: eliaz

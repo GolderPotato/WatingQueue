@@ -14,7 +14,6 @@ public class BungeeListener extends RabbitListener{
 
     @Override
     public void receive(ServerAction action, int id, int port, String name, int slots, int online, ServerStatus status, ServerState state, ServerType type) {
-        System.out.println("> "+port);
         switch (action){
             case CREATE:
                 System.out.println("SERVER ADDED > "+name);
@@ -84,6 +83,7 @@ public class BungeeListener extends RabbitListener{
             }
         }
         pp.sendMessage(NameUtils.getPrefix()+"Il semblerait qu'aucune partie n'ai été trouvée! Veuillez patienter avant qu'une partie se libère! ");
-        BungeePlugin.getInstance().runnable.queues.get(type).add(pp);
+        BungeePlugin.getInstance().runnable.removePlayer(pp);
+        BungeePlugin.getInstance().runnable.addPlayer(pp, type);
     }
 }

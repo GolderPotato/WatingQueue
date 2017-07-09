@@ -26,13 +26,13 @@ public class Queue {
     }
 
     public void addPlayer(ProxiedPlayer player, ServerType serverType){
-        HashMap<ServerType, ProxiedPlayer> toRemove = new HashMap<>();
-        for(ArrayList<ProxiedPlayer> pp : queues.values()){
-            if(pp.contains(player)){
-                pp.remove(player);
-            }
-        }
         queues.get(serverType).add(player);
+    }
+
+    public void removePlayer(ProxiedPlayer player){
+        for(ServerType serverTypes : ServerType.values()){
+            try{queues.get(serverTypes).remove(player);}catch (Exception e){e.printStackTrace();}
+        }
     }
 
     public void findServer(Server server){

@@ -1,3 +1,7 @@
 name: WaitingQueu
 version: 0.1
 main: fr.golderpotato.waitingqueue.bungee.BungeePlugin
+rabbit.host: localhost
+rabbit.port: 5672
+rabbit.user: eliaz
+rabbit.password: eliaz

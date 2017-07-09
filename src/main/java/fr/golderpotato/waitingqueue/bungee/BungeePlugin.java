@@ -1,6 +1,7 @@
 package fr.golderpotato.waitingqueue.bungee;
 
 import fr.golderpotato.waitingqueue.listener.event.listener.BungeeListener;
+import fr.golderpotato.waitingqueue.mq.RabbitMQ;
 import fr.golderpotato.waitingqueue.runnable.Queue;
 import fr.golderpotato.waitingqueue.server.Server;
 import net.md_5.bungee.api.ProxyServer;

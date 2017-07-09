@@ -2,8 +2,6 @@ package fr.golderpotato.waitingqueue;
 
 import fr.golderpotato.waitingqueue.commands.Menu;
 import fr.golderpotato.waitingqueue.listener.event.EventsManager;
-import fr.golderpotato.waitingqueue.listener.event.listener.BukkitListener;
-import fr.golderpotato.waitingqueue.mq.RabbitMQ;
 import fr.golderpotato.waitingqueue.server.Server;
 import fr.golderpotato.waitingqueue.server.ServerState;
 import fr.golderpotato.waitingqueue.server.ServerStatus;
@@ -19,23 +17,11 @@ public class BukkitPlugin extends JavaPlugin{
     private static BukkitPlugin instance;
     private Server server;
 
-    private int id;
-    private int port;
-    private String ip;
-    private String name;
-    private ServerStatus serverStatus;
-    private ServerState serverState;
-    private ServerType serverType;
-    private int slots;
-    private int online;
-
     @Override
     public void onEnable() {
         instance = this;
         saveDefaultConfig();
-        RabbitMQ.getInstance();
 
-        new BukkitListener();
         new EventsManager(this).registerEvents();
 
         getCommand("menu").setExecutor(new Menu());

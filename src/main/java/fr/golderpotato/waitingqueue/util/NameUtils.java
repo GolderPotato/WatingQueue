@@ -6,7 +6,7 @@ package fr.golderpotato.waitingqueue.util;
  */
 public class NameUtils {
 
-    private static String prefix = "§c[§2Files D'attente§c] §2";
+    private static String prefix = "§c[§2Files D'attente§c] §e";
 
     public static String getPrefix(){
         return prefix;
